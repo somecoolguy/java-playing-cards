@@ -1,5 +1,7 @@
+package src;
 /**
  * A class to represent a Card with a suit and a value
+ * @author dsym
  */
 public class Card {
 	private Suit suit;

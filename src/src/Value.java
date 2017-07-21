@@ -1,5 +1,7 @@
+package src;
 /**
  * An enum representing the possible face values of cards
+ * @author dsym
  */
 public enum Value {
 	TWO,

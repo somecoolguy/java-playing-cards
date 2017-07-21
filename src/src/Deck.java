@@ -1,6 +1,11 @@
+package src;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
-
+/**
+ * Class representing a deck of 52 unique cards
+ * @author dsym
+ *
+ */
 public class Deck {
 	private List<Card> cards;
 	
@@ -10,7 +15,7 @@ public class Deck {
 		//Loop through every combination of suit and value
 		for (Suit suit: Suit.values()) {
 			for (Value val: Value.values()) {
-				//Create a card with the current suit and value and add it to the deck
+				//Create a card with the current suit and value and add it to the end of the deck
 				Card c = new Card(suit, val);
 				cards.add(c);
 			}
@@ -43,7 +48,7 @@ public class Deck {
 	
 	/**
 	 * Remove the last card from the deck and return it to the caller
-	 * @return the card at position 0 in the deck. 
+	 * @return the card at the last position in the deck. 
 	 * @throws IndexOutOfBoundsException if the deck has no cards left
 	 */
 	public Card dealOneCard() {
@@ -58,5 +63,17 @@ public class Deck {
 		Card lastCard = cards.get(lastCardPos);
 		cards.remove(lastCardPos);
 		return lastCard;
+	}
+	
+	/**
+	 * Method for converting the entire deck to a string (I built this mainly for testing purposes)
+	 * @return A string containing all the cards in the deck, separated by line breaks
+	 */
+	public String toString() {
+		String deckString = "";
+		for (Card c : cards) {
+			deckString += c.toString() + "\n";
+		}
+		return deckString;
 	}
 }
